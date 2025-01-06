@@ -7,8 +7,6 @@ phases:
    commands:
      - echo "pre_build step - removing private files"
      - rm buildspec.yml
-     - rm README
-     - rm -f .DS_Store
  build:
    commands:
      - aws s3 sync . s3://longevityframework.com --delete
