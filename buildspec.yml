@@ -6,7 +6,13 @@ phases:
  pre_build:
    commands:
      - echo "pre_build step - removing private files"
-     - rm buildspec.yml
+     - rm -f buildspec.yml
+     - rm -f README.md
+     - rm -f .DS_Store
+     - rm -f .gitignore
+     - rm -f diet/.diet_template.html
+     - rm -f lifestyle/.lifestyle_template.html
+     - rm -f supplementation/.supplementation_template.html
  build:
    commands:
      - aws s3 sync . s3://longevityframework.com --delete
