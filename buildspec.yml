@@ -9,7 +9,7 @@ phases:
      - rm buildspec.yml
  build:
    commands:
-     - aws s3 sync . s3://longevityframework.com --delete
+     - aws s3 sync . s3://longevityframework.com
  post_build:
    commands:
      - echo "post_build step"
