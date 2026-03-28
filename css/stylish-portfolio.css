@@ -343,6 +343,7 @@ h6 {
 footer.footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
+  background-color: #D4DFE6;
 }
 
 footer.footer .social-link {
@@ -443,7 +444,33 @@ a:hover, a:focus, a:active {
   padding-bottom: 1.5rem;
 }
 
-.footer-menu { 
-  background-color: #D4DFE6;
+.footer-menu {
   margin-bottom: 2rem !important;
+}
+
+/* Compact header for subpages */
+.masthead-compact {
+  background-color: #D4DFE6;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.masthead-compact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.masthead-compact-link:hover {
+  color: #1D809F;
+  text-decoration: none;
+}
+
+.logo-compact {
+  width: 28px;
+  height: 28px;
 }
