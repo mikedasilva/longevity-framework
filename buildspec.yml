@@ -1,21 +1,13 @@
 version: 0.2
 phases:
- install:
-   commands:
-     - echo "install step"
- pre_build:
-   commands:
-     - echo "pre_build step - removing private files"
-     - rm -f buildspec.yml
-     - rm -f README.md
-     - rm -f .DS_Store
-     - rm -f .gitignore
-     - rm -f diet/.diet_template.html
-     - rm -f lifestyle/.lifestyle_template.html
-     - rm -f supplementation/.supplementation_template.html
  build:
    commands:
-     - aws s3 sync . s3://longevityframework.com --delete
+     - mkdir -p dist
+     - rsync -av --exclude='.git' --exclude='buildspec.yml' --exclude='README.md' --exclude='.DS_Store' --exclude='.gitignore' ./ dist/
+     - rm -f dist/diet/.diet_template.html
+     - rm -f dist/lifestyle/.lifestyle_template.html
+     - rm -f dist/supplementation/.supplementation_template.html
+     - aws s3 sync dist/ s3://longevityframework.com --delete
  post_build:
    commands:
      - echo "post_build steps"
